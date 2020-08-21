@@ -2,7 +2,7 @@ let users = {
     sarahedo: {
         id: 'sarahedo',
         name: 'Sarah Edo',
-        avatarURL: 'https://robohash.org/3aa2feddba8628e0d4b6768f660901c4?set=set4&bgset=&size=400x400',
+        avatarURL: 'https://gravatar.com/avatar/720012884caa991343dcf585aa3073bf?s=200&d=retro&r=x',
         answers: {
             "8xf0y6ziyjabvozdd253nd": 'optionOne',
             "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
     tylermcginnis: {
         id: 'tylermcginnis',
         name: 'Tyler McGinnis',
-        avatarURL: 'https://robohash.org/e18ba36a4465228ee92bc27b838542e7?set=set4&bgset=&size=400x400',
+        avatarURL: 'https://gravatar.com/avatar/79ff9e97213bc66dc844caf6df692862?s=200&d=retro&r=x',
         answers: {
             "vthrdm985a262al8qx3do": 'optionOne',
             "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
     johndoe: {
         id: 'johndoe',
         name: 'John Doe',
-        avatarURL: 'https://robohash.org/e3d595ea830b0725eb46c655e592f0f3?set=set4&bgset=&size=400x400',
+        avatarURL: 'https://gravatar.com/avatar/d4d5c79597ece86273da7380fb9aa6c9?s=200&d=retro&r=x',
         answers: {
             "xj352vofupe1dqz9emx13r": 'optionOne',
             "vthrdm985a262al8qx3do": 'optionTwo',
