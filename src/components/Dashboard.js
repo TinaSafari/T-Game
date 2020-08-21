@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Leaderboard from './Leaderboard'
 
 class Dashboard extends Component {
 
@@ -7,7 +8,9 @@ class Dashboard extends Component {
 
         return (
             <div>
-                <h3 className='center'>Dashboard</h3>
+                <h3 className='center'>
+                <Leaderboard/>
+                </h3>
                 <div className='btn-group'>
                     <button>
                         Unanswered
