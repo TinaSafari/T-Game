@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux'
+import '../css/Leaderboard.css'
 
 class Leaderboard extends Component {
     render() {
