@@ -1,11 +1,10 @@
 import React,{ Component} from "react";
 import {connect} from 'react-redux'
-import {Link, NavLink} from "react-router-dom";
 import { Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 
 class Navbar extends Component{
     render() {
-        const {users, authUser} =this.props
+        // const {users, authUser} =this.props
         return(
             <div className='nav-box'>
                 <Navbar bg="light" expand="lg">
@@ -16,11 +15,10 @@ class Navbar extends Component{
                             <Nav.Link href="#home">Home</Nav.Link>
                             <Nav.Link href="#link">Link</Nav.Link>
                             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">New Poll</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Leader Board</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.4">Log-in</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                         <Form inline>

@@ -12,7 +12,7 @@ export function receiveQuestions(questions) {
         questions
     }
 }
-export function addQuestion(question){
+export function handleAddQuestion(question){
     return{
         type: ADD_QUESTION,
         question
