@@ -1,9 +1,15 @@
 import React from 'react';
 
-const PageNotFound = () => (
-    <div className="text-center page-not-found-image-container">
-        <img className="page-not-found-image" src="/404.jpg" alt="" />
-    </div>
-);
+
+class PageNotFound extends Comment {
+    remove() {
+        return (
+            <div>
+                <h3>Page Not Found</h3>
+                <p>The page is not found</p>
+            </div>
+        )
+    }
+}
 
 export default PageNotFound;
