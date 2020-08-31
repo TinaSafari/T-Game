@@ -1,10 +1,36 @@
-import {getInitialData} from "../utils/api";
-import {showLoading, hideLoading} from "react-redux-loading-bar";
+import {saveQuestion, saveQuestionAnswer} from "../utils/api";
+import {handleInitialData} from './shared'
+import {hideLoading, showLoading} from "react-redux-loading-bar";
+
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
-export const ADD_QUESTION = 'ADD_QUESTION'
-export const ADD_QUESTION_ANSWER = 'ADD_QUESTION_ANSWER';
 
+export function handleSaveQuestionAnswer(answerObj) {
+    return dispatch => {
+        dispatch(showLoading())
+
+        return saveQuestionAnswer({
+            ...answerObj
+        })
+            .then(() => dispatch(handleInitialData(answerObj.authUser)))
+            .then(() => dispatch(hideLoading()))
+    }
+}
+
+export function handleSaveQuestion(info) {
+    console.log('questionObj: ', info)
+    return dispatch => {
+        dispatch(showLoading())
+
+        return saveQuestion({
+            ...info,
+            author: info.authUser
+        })
+            .then(res => dispatch(handleInitialData(res.author)))
+            .then(() => console.log('plonk'))
+            .then(() => dispatch(hideLoading()))
+    }
+}
 
 export function receiveQuestions(questions) {
     return {
@@ -12,27 +38,4 @@ export function receiveQuestions(questions) {
         questions
     }
 }
-export function addQuestion(question){
-    return{
-        type: ADD_QUESTION,
-        question
-    }
-}
 
-export function addQuestionAnswer(authUser, questionId, selectedOption){
-    return{
-        type: ADD_QUESTION_ANSWER,
-        authUser,
-        questionId,
-        selectedOption
-    }
-}
-export function handleGetQuestions(){
-    return(dispatch) => {
-        dispatch(showLoading());
-        getInitialData().then((questions) => {
-            dispatch(receiveQuestions(questions))
-            dispatch(hideLoading())
-        })
-    }
-}
