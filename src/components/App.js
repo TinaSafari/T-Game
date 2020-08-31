@@ -22,11 +22,13 @@ class App extends Component {
                         <Navbar/>
                         {this.props.loading === true
                             ? null
-                            : <div>
+                            : (<div>
                                 <Route path='/' exact component={Dashboard}/>
                                 <Route path='/' exact component={Login}/>
                                 <Route path='/' exact component={NewQuestion}/>
-                            </div>}
+                            </div>
+
+                            )}
                     </div>
                 </Fragment>
             </Router>

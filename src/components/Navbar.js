@@ -1,37 +1,49 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux'
-import {Nav} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
     render() {
-        const {users, authUser} = this.props
-        // const {name, avatarURL} = users[authUser]
+        const {user, authUser} = this.props
         return (
             <div className='nav-box'>
-                <Navbar bg="light" expand="lg">
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#new-question ">New Question</Nav.Link>
-                            <Nav.Link href="#leader-board">Leader Board</Nav.Link>
-                            <Nav.Link href="#log-out">Log Out</Nav.Link>
-
-                        </Nav>
-
-                    </Navbar.Collapse>
-                </Navbar>
+                <div className='inner-box'>
+                    {/*<img src={brand} alt="logo" className="nav-brand" />*/}
+                    {authUser ? (
+                        <ul className="nav-list">
+                            <li className="nav-item">
+                                <Link to="/home">Home</Link>
+                            </li>
+                            <li className="nav-item green">
+                                <Link to="/add">+ Add new question</Link>
+                            </li>
+                            <li className="nav-item split">
+                                <Link to="/leaderboard">Leaderboard</Link>
+                            </li>
+                            <li className="nav-item">{user ? user.name : null}</li>
+                            <li className="nav-item log-out">
+                                <Link to="/">
+                                    <button className="log-out-button">Log Out</button>
+                                </Link>
+                            </li>
+                        </ul>
+                    ) : (
+                        <ul className="nav-list">
+                            <li className="nav-item">Log in to ask a question</li>
+                        </ul>
+                    )}
+                </div>
             </div>
-
         )
     }
 }
 
-function mapStateToProps({users, authUser}) {
+function mapStateToProps(state) {
+    const { users, authUser } = state
+    const user = users[authUser]
     return {
-        authUser,
-        users
+        user,
+        authUser
     }
 }
 
