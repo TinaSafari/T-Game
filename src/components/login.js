@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {setAuthUser} from "../Actions/authUser";
 
 class Login extends Component{
-    componentDidMount() {
+    componentWillMount() {
         this.props.dispatch(setAuthUser(false))
     }
     render() {
@@ -24,7 +24,7 @@ class Login extends Component{
 function mapStateToProps(state){
     const users = state.users
     return{
-        usersId: Object.key(users),
+        usersId: Object.keys(users),
         users
     }
 }
