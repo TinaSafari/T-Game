@@ -10,6 +10,7 @@ import Question from "./Question";
 import Leaderboard from "./Leaderboard";
 import PageNotFound from "./NotFound";
 
+
 class App extends Component {
     componentDidMount() {
         this.props.dispatch(handleInitialData())
