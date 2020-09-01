@@ -10,7 +10,7 @@ class Question extends Component {
         return (
             <div className='question'>
                 <div className='title-question'>
-                    <img src={users.avatarURL} alt='avatar' className='avatar'/>
+                    <img src={user.avatarURL} alt='avatar' className='avatar'/>
                     <h3>
                         {user.name}<small>{formatQuestion(question.timestamp)}</small>
                     </h3>

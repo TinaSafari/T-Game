@@ -8,7 +8,6 @@ class Navbar extends Component {
         return (
             <div className='nav-box'>
                 <div className='inner-box'>
-                    {/*<img src={brand} alt="logo" className="nav-brand" />*/}
                     {authUser ? (
                         <ul className="nav-list">
                             <li className="nav-item">
