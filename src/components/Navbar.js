@@ -14,7 +14,7 @@ class Navbar extends Component {
                                 <Link to="/home">Home</Link>
                             </li>
                             <li className="nav-item green">
-                                <Link to="/add">+ Add new question</Link>
+                                <Link to="/add">Add new question</Link>
                             </li>
                             <li className="nav-item split">
                                 <Link to="/leaderboard">Leaderboard</Link>

@@ -7,7 +7,7 @@ function QuestionPage(props) {
     const { id, questions } = props;
     const question = questions[id];
 
-    if(question == null) {
+    if(question === null) {
         return <Redirect from='*' to='/not-found' />
     }
 
@@ -21,7 +21,7 @@ function QuestionPage(props) {
     );
 }
 
-function mapStateToProps({ authedUser, questions }, props) {
+function mapStateToProps({ authUser, questions }, props) {
     const { id } = props.match.params;
 
     return {
