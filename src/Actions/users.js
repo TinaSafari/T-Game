@@ -1,12 +1,3 @@
-// export const RECEIVE_USERS = 'RECEIVE_USERS'
-//
-// export function receiveUsers(users) {
-//     return {
-//         type: RECEIVE_USERS,
-//         users
-//     }
-// }
-
 import {getInitialData} from "../utils/api";
 import {showLoading, hideLoading} from 'react-redux-loading-bar'
 
@@ -28,10 +19,10 @@ export function addUserQuestion(question) {
     }
 }
 
-export function addUserQuestionAnswer(authedUser, questionId, selectedOption) {
+export function addUserQuestionAnswer(authUser, questionId, selectedOption) {
     return {
         type: ADD_USER_QUESTION_ANSWER,
-        authedUser,
+        authUser,
         questionId,
         selectedOption
     }

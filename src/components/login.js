@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {setAuthUser} from "../Actions/authUser";
 
 class Login extends Component{
-    componentWillMount() {
+    componentDidMount() {
         this.props.dispatch(setAuthUser(false))
     }
     render() {
@@ -13,7 +13,7 @@ class Login extends Component{
                 <h2>Please Sign-In</h2>
                 {usersId.map(id =>(
                     <div key={id}>
-                        <users id={id} location={location}/>
+                        <user id={id} location={location}/>
                     </div>
                 ))}
             </div>

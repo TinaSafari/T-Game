@@ -8,14 +8,13 @@ class Navbar extends Component {
         return (
             <div className='nav-box'>
                 <div className='inner-box'>
-                    {/*<img src={brand} alt="logo" className="nav-brand" />*/}
                     {authUser ? (
                         <ul className="nav-list">
                             <li className="nav-item">
                                 <Link to="/home">Home</Link>
                             </li>
                             <li className="nav-item green">
-                                <Link to="/add">+ Add new question</Link>
+                                <Link to="/add">Add new question</Link>
                             </li>
                             <li className="nav-item split">
                                 <Link to="/leaderboard">Leaderboard</Link>
