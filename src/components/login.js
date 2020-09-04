@@ -10,7 +10,7 @@ class Login extends Component{
         const {usersId,location} = this.props
         return(
             <div className='vote-box'>
-                <h2>Please Sign-In</h2>
+                <h3>Please SignIn</h3>
                 {usersId.map(id =>(
                     <div key={id}>
                         <user id={id} location={location}/>

@@ -1,32 +1,60 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Leaderboard from './Leaderboard'
+import Question from "./Question";
 
 class Dashboard extends Component {
+    state = {
+        'qToShow' : 'unanswered',
+        'activeTab' : 'unanswered'
+    }
+
+    handleClickChange = (e, click) => {
+        this.setState(() => ({
+            qToShow: click,
+                activeClick: click
+        }))
+    }
 
     render() {
+        const {qToShow, activeClick} = this.state;
 
         return (
             <div>
-                <h3 className='center'>
-                <Leaderboard/>
-                </h3>
-                <div className='btn-group'>
-                    <button>
-                        Unanswered
-                    </button>
-                    <button>
-                        Answered
-                    </button>
-                </div>
-                <ul className='question-list'>
+                <div className='projectContainer'>
+                    <div className='container'>
+                        <div className='row justify-content-center'>
+                            <div className='col-sm-8'>
+                                <div className='center'>
+                                    <button type='button'
+                                            className={"btn btn-info " + (activeClick === 'unanswered' ? 'active' : null)}
+                                            onClick={(e) => this.handleClickChange(e, 'unanswered')}>Unanswered
+                                        Questions
+                                    </button>
+                                    <button type='button'
+                                            className={"btn btn-info " + (activeClick=== 'answered' ? 'active' : null)}
+                                            onClick={(e) => this.handleClickChange(e, 'answered')}>Answered
+                                        Questions
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
 
-                </ul>
+                        <div className='row justify-content-center'>
+                            <div className='col-sm-8'>
+                                {this.props.questionIds.map((id) => {
+                                    return (
+                                        <Question key={id} id={id}
+                                                  questionsToShow={qToShow}/>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        );
+        )
     }
 }
-
 function mapStateToProps({ authUser, questions, users }) {
     return {
         authUser,
