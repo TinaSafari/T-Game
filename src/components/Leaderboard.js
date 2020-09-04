@@ -19,9 +19,9 @@ class Leaderboard extends Component {
                         <li key={user.id}>
                             <div className='user'>
                                 <img
+                                    className='avatar'
                                     src={user.avatarURL}
                                     alt={`Avatar of ${user.name}`}
-                                    className='avatar'
                                 />
                                 <span>{user.name}</span>
                                 <div className='user-stats'>
