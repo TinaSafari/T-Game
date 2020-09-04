@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import Question from "./Question";
 
 class Dashboard extends Component {
     state = {
-        'qToShow' : 'unanswered',
-        'activeTab' : 'unanswered'
+        'qToShow': 'unanswered',
+        'activeTab': 'unanswered'
     }
 
     handleClickChange = (e, click) => {
         this.setState(() => ({
             qToShow: click,
-                activeClick: click
+            activeClick: click
         }))
     }
 
@@ -31,7 +31,7 @@ class Dashboard extends Component {
                                         Questions
                                     </button>
                                     <button type='button'
-                                            className={"btn btn-info " + (activeClick=== 'answered' ? 'active' : null)}
+                                            className={"btn btn-info " + (activeClick === 'answered' ? 'active' : null)}
                                             onClick={(e) => this.handleClickChange(e, 'answered')}>Answered
                                         Questions
                                     </button>
@@ -55,7 +55,8 @@ class Dashboard extends Component {
         )
     }
 }
-function mapStateToProps({ authUser, questions, users }) {
+
+function mapStateToProps({authUser, questions, users}) {
     return {
         authUser,
         questions,

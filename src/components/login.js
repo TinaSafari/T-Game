@@ -7,11 +7,11 @@ class Login extends Component{
         this.props.dispatch(setAuthUser(false))
     }
     render() {
-        const {usersId,location} = this.props
+        const {usersIds,location} = this.props
         return(
-            <div className='vote-box'>
+            <div className='vote-container'>
                 <h3>Please SignIn</h3>
-                {usersId.map(id =>(
+                {usersIds.map(id =>(
                     <div key={id}>
                         <user id={id} location={location}/>
                     </div>
