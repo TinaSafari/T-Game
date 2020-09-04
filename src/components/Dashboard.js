@@ -41,7 +41,7 @@ class Dashboard extends Component {
 
                         <div className='row justify-content-center'>
                             <div className='col-sm-8'>
-                                {this.props.questionIds.map((id) => {
+                                {this.props.question.id.map((id) => {
                                     return (
                                         <Question key={id} id={id}
                                                   questionsToShow={qToShow}/>
