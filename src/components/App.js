@@ -4,7 +4,7 @@ import {handleInitialData} from "../Actions/shared";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Dashboard from "./Dashboard";
 import NewQuestion from "./NewQuestion";
-import Navbar from "./Navbar";
+import Navbar from "./Nav";
 import Login from "./login";
 import Question from "./Question";
 import Leaderboard from "./Leaderboard";

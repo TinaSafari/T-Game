@@ -5,7 +5,7 @@ import {hideLoading, showLoading} from "react-redux-loading-bar";
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 
-export function handleSaveQuestionAnswer(answerObj) {
+export function handleAddQuestion(answerObj) {
     return dispatch => {
         dispatch(showLoading())
 

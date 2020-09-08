@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Question from './Question';
 
-function QuestionPage(props) {
+function TakeVote(props) {
     const { id, questions } = props;
     const question = questions[id];
 
@@ -30,4 +30,4 @@ function mapStateToProps({ authUser, questions }, props) {
     };
 }
 
-export default connect(mapStateToProps)(QuestionPage);
+export default connect(mapStateToProps)(TakeVote);
