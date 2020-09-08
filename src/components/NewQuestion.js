@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux'
-import {handleSaveQuestion} from '../Actions/questions'
+import {handleAddQuestion} from '../Actions/questions'
 import {Redirect} from 'react-router-dom'
 
 
@@ -11,25 +11,23 @@ class NewQuestion extends Component {
         optionTwo: ''
     }
     handleChange = (e) => {
-        const text = e.target.value
-        const name = e.target.name
-
-        this.setState(() => ({
-            [name]: text
-        }))
+        const {value, id} = e.target
+        this.setState(() => ({[id]: value}))
     }
+
     handleSubmit = (e) => {
         e.preventDefault()
-        const {optionOne, optionTwo} = this.state
-        const {dispatch, authUser} = this.props
 
-        dispatch(
-            handleSaveQuestion({optionOne, optionTwo, authUser})
-        ).then(() =>
-            this.setState(() => ({
-                redirectHome: true
-            }))
-        )
+        const {optionOne, optionTwo} = this.state
+        const {dispatch} = this.props
+
+        dispatch(handleAddQuestion(optionOne, optionTwo))
+
+        this.setState(() => ({
+            optionOne: '',
+            optionTwo: '',
+            toDashboard: true
+        }))
     }
 
     render() {
