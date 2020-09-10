@@ -56,7 +56,7 @@ class NewQuestion extends Component {
                         onChange={this.handleChange}/>
                     <br/>
                     <button type='submit'>
-                        Ask Your Question
+                        Submit
                     </button>
                 </form>
             </div>

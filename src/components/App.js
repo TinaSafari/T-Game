@@ -16,23 +16,24 @@ class App extends Component {
     componentDidMount() {
         this.props.dispatch(handleInitialData())
     }
+
     render() {
-        const { loggedIn } = this.props;
+        const {loggedIn} = this.props;
 
         return (
             <Router>
                 <Fragment>
                     <div className='container'>
-                        <Navbar />
+                        <Navbar/>
                         <div>
                             <Switch>
-                                <Route path='/' exact component={Dashboard} loggedIn={loggedIn} />
-                                <Route path='/leaderboard' exact component={Leaderboard} loggedIn={loggedIn} />
-                                <Route path='/add' exact component={NewQuestion} loggedIn={loggedIn} />
-                                <Route path='/vote' exact component={TakeVote} loggedIn={loggedIn} />
-                                <Route path='/questions/:id' exact component={Question} loggedIn={loggedIn} />
-                                <Route path='/login' exact component={Login} />
-                                <Route component={PageNotFound} />
+                                <Route path='/' exact component={Dashboard} loggedIn={loggedIn}/>
+                                <Route path='/leaderboard' exact component={Leaderboard} loggedIn={loggedIn}/>
+                                <Route path='/add' exact component={NewQuestion} loggedIn={loggedIn}/>
+                                <Route path='/vote' exact component={TakeVote} loggedIn={loggedIn}/>
+                                <Route path='/questions/:id' exact component={Question} loggedIn={loggedIn}/>
+                                <Route path='/login' exact component={Login}/>
+                                <Route component={PageNotFound}/>
                             </Switch>
                         </div>
                     </div>
@@ -42,7 +43,7 @@ class App extends Component {
     }
 }
 
-function mapStateToProps({ authUser }) {
+function mapStateToProps({authUser}) {
     return {
         loggedIn: authUser !== null,
     };

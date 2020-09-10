@@ -12,12 +12,14 @@ class Login extends Component {
         const {userIds, location} = this.props
         return (
             <div className="vote-container">
-                <h2 className='center'>Login</h2>
-                {userIds.map(id => (
-                    <div key={id}>
-                        <User id={id} location={location}/>
-                    </div>
-                ))}
+                <div className='center'>
+                    <h2>Login</h2>
+                    {[userIds].map(id => (
+                        <div key={id}>
+                            <User id={id} location={location}/>
+                        </div>
+                    ))}
+                </div>
             </div>
         )
     }
