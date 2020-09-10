@@ -54,8 +54,7 @@ class Nav extends Component {
                     <ReactBootstrap.Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <ReactBootstrap.Navbar.Collapse id="basic-navbar-nav">
                         <ReactBootstrap.Nav className="mr-auto">
-                            <ReactBootstrap.Nav.Link  to='/' exact activeClassName='active'
-                                                      >Dashboard</ReactBootstrap.Nav.Link>
+                            <ReactBootstrap.Nav.Link  href="dashboard" tag={NavLink} to='/'>Dashboard</ReactBootstrap.Nav.Link>
                             <ReactBootstrap.Nav.Link href="/leaderboard" tag={NavLink} to="/leaderboard">Leaderboard</ReactBootstrap.Nav.Link>
                             <ReactBootstrap.Nav.Link href="/question" tag={NavLink} to="/add">Question</ReactBootstrap.Nav.Link>
                             <ReactBootstrap.NavDropdown.Item href="logout" tag={NavLink} to="#"
