@@ -1,14 +1,19 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
+import {fakeAuth} from "../utils/api";
+
 
 class User extends Component {
     state = {
         redirectToUser: false
     }
 
-    handleLogin = (id) => {
-        const {dispatch} = this.props
+    handleLogin = id => {
+        fakeAuth.authenticate(() => {
+            this.props.setAuthUser(id)
+            this.setState({ redirectToReferrer: true })
+        })
     }
 
     render() {

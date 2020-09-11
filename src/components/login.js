@@ -1,29 +1,33 @@
-import React,{Component} from "react";
+import React, {Component} from "react";
 import {connect} from 'react-redux'
 import {setAuthUser} from "../Actions/authUser";
+import User from "./User";
 
-class Login extends Component{
+class Login extends Component {
     componentDidMount() {
         this.props.dispatch(setAuthUser(false))
     }
+
     render() {
-        const {usersIds,location} = this.props
-        return(
-            <div className='vote-container'>
-                <h3>Please SignIn</h3>
-                {usersIds.map(id =>(
-                    <div key={id}>
-                        <user id={id} location={location}/>
-                    </div>
-                ))}
+        const {userIds, location} = this.props
+        return (
+            <div className="vote-container">
+                <div className='center'>
+                    <h2>Login</h2>
+                    {[userIds].map(id => (
+                        <div key={id}>
+                            <User id={id} location={location}/>
+                        </div>
+                    ))}
+                </div>
             </div>
         )
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     const users = state.users
-    return{
+    return {
         usersId: Object.keys(users),
         users
     }
