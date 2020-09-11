@@ -39,7 +39,7 @@ class Nav extends Component {
                             <ReactBootstrap.Nav.Link href="/leaderboard" tag={NavLink}
                                                      to="/leaderboard">Leaderboard</ReactBootstrap.Nav.Link>
                             <ReactBootstrap.Nav.Link href="/question" tag={NavLink}
-                                                     to="/add">Question</ReactBootstrap.Nav.Link>
+                                                     to="/question">Question</ReactBootstrap.Nav.Link>
                             <ReactBootstrap.Nav.Link href="/newQuestion" tag={NavLink}
                                                      to="/add">NewQuestion</ReactBootstrap.Nav.Link>
                             <ReactBootstrap.NavDropdown.Item href="logout" tag={NavLink} to="#"
