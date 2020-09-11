@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Question from "./Question";
+import questions from "../reducers/questions";
 
 class Dashboard extends Component {
     state = {
@@ -41,10 +42,10 @@ class Dashboard extends Component {
 
                         <div className='row justify-content-center'>
                             <div className='col-sm-8'>
-                                {this.props.question.id.map((id) => {
+                                {questions.id.map((id) => {
                                     return (
                                         <Question key={id} id={id}
-                                                  questionsToShow={qToShow}/>
+                                                  qToShow={qToShow}/>
                                     )
                                 })}
                             </div>

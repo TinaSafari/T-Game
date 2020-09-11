@@ -9,7 +9,6 @@ import Login from "./login";
 import Question from "./Question";
 import Leaderboard from "./Leaderboard";
 import PageNotFound from "./NotFound";
-import TakeVote from "./TakeVote";
 
 
 class App extends Component {
@@ -27,16 +26,16 @@ class App extends Component {
                         <Navbar/>
                         <div>
                             <Switch>
+                                <Route path='/login' exact component={Login}/>
                                 <Route path='/' exact component={Dashboard} loggedIn={loggedIn}/>
                                 <Route path='/leaderboard' exact component={Leaderboard} loggedIn={loggedIn}/>
                                 <Route path='/add' exact component={NewQuestion} loggedIn={loggedIn}/>
-                                <Route path='/vote' exact component={TakeVote} loggedIn={loggedIn}/>
                                 <Route path='/questions/:id' exact component={Question} loggedIn={loggedIn}/>
-                                <Route path='/login' exact component={Login}/>
                                 <Route component={PageNotFound}/>
                             </Switch>
                         </div>
                     </div>
+
                 </Fragment>
             </Router>
         );
