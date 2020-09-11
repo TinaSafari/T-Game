@@ -27,7 +27,6 @@ export function handleSaveQuestion(info) {
             author: info.authUser
         })
             .then(res => dispatch(handleInitialData(res.author)))
-            .then(() => console.log('plonk'))
             .then(() => dispatch(hideLoading()))
     }
 }
